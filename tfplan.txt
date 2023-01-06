@@ -1,0 +1,683 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # module.ec2.data.aws_ami.ubuntu will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_ami" "ubuntu" {
+      + architecture          = (known after apply)
+      + arn                   = (known after apply)
+      + block_device_mappings = (known after apply)
+      + boot_mode             = (known after apply)
+      + creation_date         = (known after apply)
+      + deprecation_time      = (known after apply)
+      + description           = (known after apply)
+      + ena_support           = (known after apply)
+      + hypervisor            = (known after apply)
+      + id                    = (known after apply)
+      + image_id              = (known after apply)
+      + image_location        = (known after apply)
+      + image_owner_alias     = (known after apply)
+      + image_type            = (known after apply)
+      + imds_support          = (known after apply)
+      + kernel_id             = (known after apply)
+      + most_recent           = true
+      + name                  = (known after apply)
+      + owner_id              = (known after apply)
+      + owners                = [
+          + "099720109477",
+        ]
+      + platform              = (known after apply)
+      + platform_details      = (known after apply)
+      + product_codes         = (known after apply)
+      + public                = (known after apply)
+      + ramdisk_id            = (known after apply)
+      + root_device_name      = (known after apply)
+      + root_device_type      = (known after apply)
+      + root_snapshot_id      = (known after apply)
+      + sriov_net_support     = (known after apply)
+      + state                 = (known after apply)
+      + state_reason          = (known after apply)
+      + tags                  = (known after apply)
+      + tpm_support           = (known after apply)
+      + usage_operation       = (known after apply)
+      + virtualization_type   = (known after apply)
+
+      + filter {
+          + name   = "name"
+          + values = [
+              + "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*",
+            ]
+        }
+      + filter {
+          + name   = "virtualization-type"
+          + values = [
+              + "hvm",
+            ]
+        }
+
+      + timeouts {
+          + read = (known after apply)
+        }
+    }
+
+  # module.ec2.aws_instance.web will be created
+  + resource "aws_instance" "web" {
+      + ami                                  = (known after apply)
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = true
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t2.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "HelloWorld"
+        }
+      + tags_all                             = {
+          + "Name" = "HelloWorld"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification {
+          + capacity_reservation_preference = (known after apply)
+
+          + capacity_reservation_target {
+              + capacity_reservation_id                 = (known after apply)
+              + capacity_reservation_resource_group_arn = (known after apply)
+            }
+        }
+
+      + ebs_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + snapshot_id           = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+
+      + enclave_options {
+          + enabled = (known after apply)
+        }
+
+      + ephemeral_block_device {
+          + device_name  = (known after apply)
+          + no_device    = (known after apply)
+          + virtual_name = (known after apply)
+        }
+
+      + maintenance_options {
+          + auto_recovery = (known after apply)
+        }
+
+      + metadata_options {
+          + http_endpoint               = (known after apply)
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = (known after apply)
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface {
+          + delete_on_termination = (known after apply)
+          + device_index          = (known after apply)
+          + network_card_index    = (known after apply)
+          + network_interface_id  = (known after apply)
+        }
+
+      + private_dns_name_options {
+          + enable_resource_name_dns_a_record    = (known after apply)
+          + enable_resource_name_dns_aaaa_record = (known after apply)
+          + hostname_type                        = (known after apply)
+        }
+
+      + root_block_device {
+          + delete_on_termination = (known after apply)
+          + device_name           = (known after apply)
+          + encrypted             = (known after apply)
+          + iops                  = (known after apply)
+          + kms_key_id            = (known after apply)
+          + tags                  = (known after apply)
+          + throughput            = (known after apply)
+          + volume_id             = (known after apply)
+          + volume_size           = (known after apply)
+          + volume_type           = (known after apply)
+        }
+    }
+
+  # module.ec2.aws_key_pair.deployer will be created
+  + resource "aws_key_pair" "deployer" {
+      + arn             = (known after apply)
+      + fingerprint     = (known after apply)
+      + id              = (known after apply)
+      + key_name        = "deployer-key"
+      + key_name_prefix = (known after apply)
+      + key_pair_id     = (known after apply)
+      + key_type        = (known after apply)
+      + public_key      = (known after apply)
+      + tags_all        = (known after apply)
+    }
+
+  # module.ec2.local_file.ec2pemkey will be created
+  + resource "local_file" "ec2pemkey" {
+      + content              = (sensitive value)
+      + directory_permission = "0777"
+      + file_permission      = "0777"
+      + filename             = "ec2-key.pem"
+      + id                   = (known after apply)
+    }
+
+  # module.ec2.random_shuffle.subnets will be created
+  + resource "random_shuffle" "subnets" {
+      + id           = (known after apply)
+      + input        = [
+          + (known after apply),
+          + (known after apply),
+          + (known after apply),
+        ]
+      + result       = (known after apply)
+      + result_count = 1
+    }
+
+  # module.ec2.tls_private_key.ec2key will be created
+  + resource "tls_private_key" "ec2key" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 4096
+    }
+
+  # module.rds.aws_db_instance.default will be created
+  + resource "aws_db_instance" "default" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 10
+      + apply_immediately                     = false
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + db_name                               = "mydb"
+      + db_subnet_group_name                  = "dbsubgroup"
+      + delete_automated_backups              = true
+      + endpoint                              = (known after apply)
+      + engine                                = "postgres"
+      + engine_version                        = "10.14"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t3.micro"
+      + iops                                  = (known after apply)
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = (known after apply)
+      + name                                  = (known after apply)
+      + nchar_character_set_name              = (known after apply)
+      + network_type                          = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = "postgresgroup"
+      + password                              = (sensitive value)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replica_mode                          = (known after apply)
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_throughput                    = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags_all                              = (known after apply)
+      + timezone                              = (known after apply)
+      + username                              = "foo"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # module.rds.aws_db_subnet_group.dbsubnetgroup will be created
+  + resource "aws_db_subnet_group" "dbsubnetgroup" {
+      + arn                     = (known after apply)
+      + description             = "Managed by Terraform"
+      + id                      = (known after apply)
+      + name                    = "dbsubgroup"
+      + name_prefix             = (known after apply)
+      + subnet_ids              = (known after apply)
+      + supported_network_types = (known after apply)
+      + tags                    = {
+          + "Name" = "My DB subnet group"
+        }
+      + tags_all                = {
+          + "Name" = "My DB subnet group"
+        }
+    }
+
+  # module.vpc.aws_eip.iceip will be created
+  + resource "aws_eip" "iceip" {
+      + allocation_id        = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = (known after apply)
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags_all             = (known after apply)
+      + vpc                  = true
+    }
+
+  # module.vpc.aws_internet_gateway.icigw will be created
+  + resource "aws_internet_gateway" "icigw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "name" = "mainigw"
+        }
+      + tags_all = {
+          + "name" = "mainigw"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_nat_gateway.icnat will be created
+  + resource "aws_nat_gateway" "icnat" {
+      + allocation_id        = (known after apply)
+      + connectivity_type    = "public"
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + private_ip           = (known after apply)
+      + public_ip            = (known after apply)
+      + subnet_id            = (known after apply)
+      + tags_all             = (known after apply)
+    }
+
+  # module.vpc.aws_route.priroute will be created
+  + resource "aws_route" "priroute" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+    }
+
+  # module.vpc.aws_route.pubroute will be created
+  + resource "aws_route" "pubroute" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.rtpri will be created
+  + resource "aws_route_table" "rtpri" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "name" = "icrtpri"
+        }
+      + tags_all         = {
+          + "name" = "icrtpri"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.rtpub will be created
+  + resource "aws_route_table" "rtpub" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "name" = "icrtpub"
+        }
+      + tags_all         = {
+          + "name" = "icrtpub"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.prisubassoc[0] will be created
+  + resource "aws_route_table_association" "prisubassoc" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.prisubassoc[1] will be created
+  + resource "aws_route_table_association" "prisubassoc" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.prisubassoc[2] will be created
+  + resource "aws_route_table_association" "prisubassoc" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.pubsubassoc[0] will be created
+  + resource "aws_route_table_association" "pubsubassoc" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.pubsubassoc[1] will be created
+  + resource "aws_route_table_association" "pubsubassoc" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.pubsubassoc[2] will be created
+  + resource "aws_route_table_association" "pubsubassoc" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_security_group.icsg will be created
+  + resource "aws_security_group" "icsg" {
+      + arn                    = (known after apply)
+      + description            = "Default security group to allow inbound/outbound from the VPC"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = "SSH"
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+            },
+        ]
+      + name                   = "vpc-default-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.subnet_pri[0] will be created
+  + resource "aws_subnet" "subnet_pri" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.4.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "name" = "subnet-private"
+        }
+      + tags_all                                       = {
+          + "name" = "subnet-private"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.subnet_pri[1] will be created
+  + resource "aws_subnet" "subnet_pri" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.5.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "name" = "subnet-private"
+        }
+      + tags_all                                       = {
+          + "name" = "subnet-private"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.subnet_pri[2] will be created
+  + resource "aws_subnet" "subnet_pri" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1c"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.6.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "name" = "subnet-private"
+        }
+      + tags_all                                       = {
+          + "name" = "subnet-private"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.subnet_pub[0] will be created
+  + resource "aws_subnet" "subnet_pub" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "name" = "subnet-public"
+        }
+      + tags_all                                       = {
+          + "name" = "subnet-public"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.subnet_pub[1] will be created
+  + resource "aws_subnet" "subnet_pub" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.2.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "name" = "subnet-public"
+        }
+      + tags_all                                       = {
+          + "name" = "subnet-public"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.subnet_pub[2] will be created
+  + resource "aws_subnet" "subnet_pub" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-1c"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.0.3.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "name" = "subnet-public"
+        }
+      + tags_all                                       = {
+          + "name" = "subnet-public"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.icvpc will be created
+  + resource "aws_vpc" "icvpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.0.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_classiclink                   = (known after apply)
+      + enable_classiclink_dns_support       = (known after apply)
+      + enable_dns_hostnames                 = (known after apply)
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "name" = "mainvpc"
+        }
+      + tags_all                             = {
+          + "name" = "mainvpc"
+        }
+    }
+
+Plan: 28 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
