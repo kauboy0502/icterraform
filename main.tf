@@ -15,3 +15,22 @@ module "vpc" {
   source = "./modules-tf/vpc"
 }
 
+module "ec2" {
+    source = "./modules-tf/ec2"
+    depends_on = [
+      module.vpc
+    ]
+    subnetpublic = module.vpc.pub_subnets
+    sgs = module.vpc.security_group_ic
+}
+
+
+module "rds" {
+  source = "./modules-tf/rds"
+  sgs=module.vpc.security_group_ic
+  dbsubgrp = module.vpc.pri_subnets
+  depends_on = [
+    module.vpc
+  ]
+  
+}
