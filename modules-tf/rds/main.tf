@@ -6,7 +6,7 @@ resource "aws_db_instance" "default" {
   engine_version       = var.engine_version
   instance_class       = "db.t3.micro"
   username             = "foo"
-  password             = "foobarbaz"
+  password             = var.random_password.password.result
   parameter_group_name = "postgresgroup"
   skip_final_snapshot  = true
   vpc_security_group_ids = [var.sgs]
