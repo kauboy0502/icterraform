@@ -4,8 +4,8 @@ resource "aws_db_instance" "default" {
   db_name              = "mydb"
   engine               = var.engine
   engine_version       = var.engine_version
-  instance_class       = "db.t3.micro"
-  username             = "foo"
+  instance_class       = var.instanceclass
+  username             = var.username
   password             = var.random_password.password.result
   parameter_group_name = "postgresgroup"
   skip_final_snapshot  = true
