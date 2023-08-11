@@ -1,0 +1,6 @@
+FROM Ubuntu:22.04
+
+
+RUN apt-get update && \
+ curl -L https://deb.nodesource.com/setup_16.x | bash && \
+ apt-get install -y --no-install-recommends nodejs="16.20.2-deb-1nodesource1"
