@@ -12,17 +12,17 @@
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ],
+  "customDatasources": {
+  "node": {
+    "defaultRegistryUrlTemplate": "https://deb.nodesource.com/node_16.x/dists/focal/main/binary-amd64/Packages",
+    "format": "plain"
+  }
+},
   "packageRules": [
     {
       "datasources": [
-        "repology"
-      ],
-"packagePatterns": [
-  "^debian_12/"
-],
-"separateMajorMinor": true,
-"groupName": "deian packages",
-"groupSlug": "debian"
+        "node"
+      ]
     }
   ]
 }
