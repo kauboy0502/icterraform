@@ -10,13 +10,12 @@
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sENV .*?_VERSION=\"(?<currentValue>.*)\"\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-      "datasourceTemplate": "custom.node"      
+      "datasourceTemplate": "custom.nodej"      
     }
   ],
   "customDatasources": {
-    "node": {
-      "defaultRegistryUrlTemplate": "https://deb.nodesource.com/node_16.x/dists/focal/main/binary-amd64/Packages",
-      "format": "plain"
+    "nodej": {
+      "defaultRegistryUrlTemplate": "https://deb.nodesource.com/node_16.x/dists/focal/main/binary-amd64/Packages"
      }
   }
 }
