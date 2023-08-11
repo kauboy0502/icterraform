@@ -18,11 +18,11 @@
         "repology"
       ],
       "packagePatterns": [
-        "^debian_stable/"
+        "^ubuntu_stable/"
       ],
       "separateMajorMinor": false,
-      "groupName": "debian packages",
-      "groupSlug": "debian"
+      "groupName": "ubuntu packages",
+      "groupSlug": "ubuntu"
     }
   ]
 }
