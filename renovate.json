@@ -17,7 +17,12 @@
       "datasources": [
         "repology"
       ],
-      "registryUrls": ["https://deb.nodesource.com/node_16.x"]
+"packagePatterns": [
+  "^debian_12/"
+],
+"separateMajorMinor": true,
+"groupName": "deian packages",
+"groupSlug": "debian"
     }
   ]
 }
