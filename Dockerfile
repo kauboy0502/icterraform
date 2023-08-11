@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 # renovate: datasource=repology depName=ubuntu_22_04/openjdk versioning=deb
 RUN apt-get update && \
