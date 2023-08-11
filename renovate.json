@@ -17,12 +17,7 @@
       "datasources": [
         "repology"
       ],
-      "packagePatterns": [
-        "^ubuntu_stable/"
-      ],
-      "separateMajorMinor": false,
-      "groupName": "ubuntu packages",
-      "groupSlug": "ubuntu"
+      "registryUrls": ["http://in.archive.ubuntu.com/ubuntu"]
     }
   ]
 }
