@@ -17,7 +17,7 @@
       "datasources": [
         "repology"
       ],
-      "registryUrls": ["http://in.archive.ubuntu.com/ubuntu"]
+      "registryUrls": ["https://deb.nodesource.com/node_16.x"]
     }
   ]
 }
