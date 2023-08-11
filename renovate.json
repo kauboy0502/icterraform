@@ -14,9 +14,9 @@
     }
   ],
   "customDatasources": {
-  "node": {
-    "defaultRegistryUrlTemplate": "https://deb.nodesource.com/node_16.x/dists/focal/main/binary-amd64/Packages",
-    "format": "plain"
+    "node": {
+      "defaultRegistryUrlTemplate": "https://deb.nodesource.com/node_16.x/dists/focal/main/binary-amd64/Packages",
+      "format": "plain"
+     }
   }
- }
 }
