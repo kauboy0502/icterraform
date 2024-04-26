@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN apt-get update 
 # renovate: datasource=repology depName=ubuntu_22_04/openjdk-lts versioning=deb
